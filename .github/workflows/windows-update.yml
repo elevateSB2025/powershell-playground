@@ -16,7 +16,7 @@ jobs:
     - name: Run Windows Update script
       shell: pwsh
       run: |
-        ./automation/windows-update.ps1
+        ./automation/pswindows-update.ps1
 
     - name: Upload update log
       uses: actions/upload-artifact@v4

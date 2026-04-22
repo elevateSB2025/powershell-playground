@@ -1,4 +1,4 @@
- windows-update.ps1
+# windows-update.ps1
 
 # Ensure C:\Temp exists
 if (-not (Test-Path "C:\Temp")) {

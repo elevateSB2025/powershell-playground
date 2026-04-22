@@ -22,4 +22,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: windows-update-log
-        path: automation/winupdate-log.txt
+        path: C:\Temp\winupdate-log.txt

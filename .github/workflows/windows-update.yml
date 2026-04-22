@@ -1,0 +1,25 @@
+name: Windows Update Check
+
+on:
+  workflow_dispatch:     # manual run
+  schedule:
+    - cron: "0 6 * * *"  # daily at 6 AM UTC
+
+jobs:
+  run-updates:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run Windows Update script
+      shell: pwsh
+      run: |
+        ./automation/windows-update.ps1
+
+    - name: Upload update log
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-update-log
+        path: automation/winupdate-log.txt
